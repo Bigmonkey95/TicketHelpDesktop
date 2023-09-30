@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicketHelpDesktopApi</name>
+    </assembly>
+    <members>
+        <member name="M:TicketHelpDesktopApi.Controllers.TicketController.Filter(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Retrieve a List Ticket with the specified id param from the database
+            </summary>
+            <param name="id">Tickets identifier</param>
+            <response code="200">Tickets retrieved</response>
+            <response code="204">there is no Ticket in the database with the specified id param</response>
+            <response code="500">in case of an error with the request</response>
+            <response code="401">if not authenticated on identity</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.TicketController.ExportToCSV(System.Collections.Generic.List{Smart.TicketHelpDesktop.Model.Ticket})">
+            <summary>
+            Retrieve a List Ticket with the specified filtered param from the database and export to Csv
+            </summary>
+            <param name="FilteredTicket">Tickets identifier to export</param>
+            <response code="200">Tickets Exported</response>
+            <response code="204">there is no Ticket in the database with the specified id param</response>
+            <response code="500">in case of an error with the request</response>
+            <response code="401">if not authenticated on identity</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.TicketController.GetAllTicket">
+            <summary>
+            Get All Ticket in the database
+            </summary>
+            <param name="GetAllTicket">the Ticket to Get</param>
+            <response code="200">Ticket List o Get</response>
+            <response code="204">Ticket List to Get not found</response>
+            <response code="400">Bad Request</response>
+            <response code="401">if not authenticated on identity</response>
+            <response code="500">in case of an error with the request</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.TicketController.GetListTickets(System.Nullable{System.Int32})">
+            <summary>
+            Get List a Ticket  in the database by IdUser
+            </summary>
+            <param name="IdUser">the List Ticket to Get</param>
+            <response code="200">Ticket List o Get</response>
+            <response code="204">Ticket List to Get not found</response>
+            <response code="400">Bad Request</response>
+            <response code="401">if not authenticated on identity</response>
+            <response code="500">in case of an error with the request</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.TicketController.UpdateTicket(Smart.TicketHelpDesktop.Model.TicketOperations,System.String)">
+            <summary>
+            Update a Ticket in the database by Id with the specified operation type (updateNotes or closeTicket).
+            </summary>
+            <param name="ticketOperations">The Ticket to update.</param>
+            <param name="operationType">The type of operation to perform ("updateNotes" or "closeTicket").</param>
+            <response code="200">Ticket successfully updated.</response>
+            <response code="204">Ticket to update not found.</response>
+            <response code="400">Bad Request.</response>
+            <response code="401">Unauthorized: User does not have permission to update this ticket.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.TicketController.SaveTicket(Smart.TicketHelpDesktop.Model.TicketOperations)">
+            <summary>
+            Save an Ticket in the database
+            </summary>
+            <param name="ticket">the Ticket to save</param>
+            <response code="200">the Ticket saved</response>
+            <response code="400">Bad Request</response>
+            <response code="401">if not authenticated on identity</response>
+            <response code="500">in case of an error with the request</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.TicketController.GetTicketDetails(System.Nullable{System.Int32})">
+            <summary>
+            Get Ticket And Details from the database
+            </summary>
+            <param name="Id">the Ticket and Details to Get</param>
+            <response code="200">the Ticket and Details Get</response>
+            <response code="400">Bad Request</response>
+            <response code="401">if not authenticated on identity</response>
+            <response code="500">in case of an error with the request</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.TicketController.AssignTicket(Smart.TicketHelpDesktop.Model.TicketOperations,System.Int32)">
+            <summary>
+            Assign a Ticket to a User.
+            </summary>
+            <param name="ticketOperations">The ID of the Ticket to be assigned.</param>
+            <param name="IdUser">The ID of the User to whom the Ticket will be assigned.</param>
+            <response code="200">If the Ticket was successfully assigned to the User.</response>
+            <response code="204">If the Ticket or User was not found.</response>
+            <response code="400">Bad Request.</response>
+            <response code="401">If the user is not authenticated.</response>
+            <response code="500">If there is an error with the request.</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.UserController.GetAllUsers">
+            <summary>
+            Get All  User in the database
+            </summary>
+            <param name="id">the User to Get</param>
+            <response code="200">User List o Get</response>
+            <response code="204">User List to Get not found</response>
+            <response code="400">Bad Request</response>
+            <response code="401">if not authenticated on identity</response>
+            <response code="500">in case of an error with the request</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.UserController.ById(System.Int32)">
+            <summary>
+            Retrieve a User with the specified id param from the database
+            </summary>
+            <param name="id">User's identifier</param>
+            <response code="200">User retrieved</response>
+            <response code="204">there is no User in the database with the specified id param</response>
+            <response code="500">in case of an error with the request</response>
+            <response code="401">if not authenticated on identity</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.UserController.UpdateUser(Smart.TicketHelpDesktop.Model.User)">
+            <summary>
+            Update an User in the database
+            </summary>
+            <param name="user">the User to update</param>
+            <response code="200">User Updated</response>
+            <response code="204">User to update not found</response>
+            <response code="400">Bad Request</response>
+            <response code="401">if not authenticated on identity</response>
+            <response code="500">in case of an error with the request</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.UserController.Login(Smart.TicketHelpDesktop.Model.LoginRequest)">
+            <summary>
+            Login With Email and Password in the database
+            </summary>
+            <param name="request">The Login Request </param>
+            <response code="200">Login Correct</response>
+            <response code="204">The User not found</response>
+            <response code="400">Bad Request</response>
+            <response code="401">if not authenticated on identity</response>
+            <response code="500">in case of an error with the request</response>
+        </member>
+        <member name="M:TicketHelpDesktopApi.Controllers.UserController.Register(Smart.TicketHelpDesktop.Model.RegisterRequest)">
+            <summary>
+            Register a user in the database
+            </summary>
+            <param name="registerRequest">The User Request </param>
+            <response code="200">Register Correct</response>
+            <response code="204">The Register Error not Found</response>
+            <response code="400">Bad Request</response>
+            <response code="401">if not authenticated on identity</response>
+            <response code="500">in case of an error with the request</response>
+        </member>
+        <member name="T:ProtocolApi.Program">
+            <summary>
+            Start Programm
+            </summary>
+        </member>
+        <member name="M:ProtocolApi.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args">args from command line</param>
+        </member>
+        <member name="M:ProtocolApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Create Host Builder
+            </summary>
+            <param name="args">args from command line</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProtocolApi.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="P:ProtocolApi.Startup.Environment">
+            <summary>
+            Rif to current environment
+            </summary>
+        </member>
+        <member name="P:ProtocolApi.Startup.Configuration">
+            <summary>
+            Rif to current configuration
+            </summary>
+        </member>
+        <member name="M:ProtocolApi.Startup.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="environment"></param>
+        </member>
+        <member name="M:ProtocolApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ProtocolApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
